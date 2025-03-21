@@ -317,7 +317,7 @@ jobs:
               echo "ARCH_3=aarch64_generic" >> $GITHUB_ENV
               ;;
             "Firefly_Roc-RK3328")
-              echo "PROFILE=firefly_roc-rk3328" >> $GITHUB_ENV
+              echo "PROFILE=firefly_roc-rk3328-cc" >> $GITHUB_ENV
               echo "TARGET_SYSTEM=rockchip/armv8" >> $GITHUB_ENV
               echo "TARGET_NAME=rockchip-armv8" >> $GITHUB_ENV
               echo "ARCH_1=arm64" >> $GITHUB_ENV
