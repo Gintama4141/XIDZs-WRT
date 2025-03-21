@@ -76,6 +76,7 @@ rename_firmware() {
         "-firefly_roc-rk3328-cc-squashfs-sysupgrade|Firefly_Roc-RK3328-CC-squashfs-sysupgrade"
         "-friendlyarm_nanopi-r2c-squashfs-sysupgrade|Friendlyarm_Nanopi-R2C-squashfs-sysupgrade"
         "-friendlyarm_nanopi-r2c-plus-squashfs-sysupgrade|Friendlyarm_Nanopi-R2C-Plus-squashfs-sysupgrade"
+        "-friendlyarm_nanopi-r2s-squashfs-sysupgrade|Friendlyarm_Nanopi-R2S-squashfs-sysupgrade"
         "-friendlyarm_nanopi-r3s-squashfs-sysupgrade|Friendlyarm_Nanopi-R3S-squashfs-sysupgrade"
         "-friendlyarm_nanopi-r4s-squashfs-sysupgrade|Friendlyarm_Nanopi-R4S-squashfs-sysupgrade"
         "-friendlyarm_nanopi-r5s-squashfs-sysupgrade|Friendlyarm_Nanopi-R5S-squashfs-sysupgrade"
