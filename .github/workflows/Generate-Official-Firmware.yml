@@ -30,6 +30,7 @@ on:
           - Nanopi-r6s
           - Orangepi R1 Plus
           - Orangepi R1 Plus LTS
+          - Firefly_Roc-RK3328
       tunnel:
         description: "Select VPN Client app:"
         required: true
@@ -94,7 +95,8 @@ jobs:
               "Nanopi-r5s",
               "Nanopi-r6s",
               "Orangepi R1 Plus",
-              "Orangepi R1 Plus LTS"
+              "Orangepi R1 Plus LTS",
+              "Firefly_Roc-RK3328"
             ]
           }
           EOJ
