@@ -1,0 +1,35 @@
+proxies:
+# ◉ⓌⓁⒼ ◉ⓌⓈ ◉ⓈⓃⒾ #
+- name: MAN
+  interface-name: wwan0
+  server: ava.game.naver.com
+  port: 443
+  type: trojan
+  password: vvip-id1Trojan
+  skip-cert-verify: true
+  sni: ava.game.naver.com.id5tr.jagoanvip.xyz
+  network: ws
+  ws-opts:
+    path: /trojan
+    headers:
+      Host: ava.game.naver.com.id5tr.jagoanvip.xyz
+  udp: true
+- name: IKD
+  interface-name: wwan0
+  type: vmess
+  server: ava.game.naver.com
+  port: 443
+  uuid: 3c7fdd34-af74-4659-be84-a76881235442
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername:  ava.game.naver.com.ikd.sing-box.space
+  network: ws
+  ws-opts:
+    path: /mwk/buy-vmess-upgrade-pm-telegram-at-synricha
+    headers:
+      Host: ava.game.naver.com.ikd.sing-box.space
+    v2ray-http-upgrade: true
+    v2ray-http-upgrade-fast-open: false

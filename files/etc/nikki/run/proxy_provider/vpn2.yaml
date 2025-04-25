@@ -1,0 +1,89 @@
+proxies:
+  - name: First Cagayan 
+    interface-name: wwan0
+    server: 104.18.213.235
+    port: 443
+    type: vless
+    uuid: 9ed0f660-2fd6-4016-a6df-95df20598658
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    network: ws
+    servername: my-vpnvip.my.id
+    ws-opts:
+      path: /203.194.112.119-8443
+      headers:
+        Host: my-vpnvip.my.id
+    udp: true
+  - name: Amazon ID 
+    interface-name: wwan0
+    server: 104.18.214.235
+    port: 443
+    type: vless
+    uuid: 9ed0f660-2fd6-4016-a6df-95df20598658
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    network: ws
+    servername: my-vpnvip.my.id
+    ws-opts:
+      path: /43.218.77.16-443
+      headers:
+        Host: my-vpnvip.my.id
+    udp: true
+  - name: Leaseweb Asia
+    interface-name: wwan0
+    server: ava.game.naver.com
+    port: 443
+    type: trojan
+    password: 9ed0f660-2fd6-4016-a6df-95df20598658
+    skip-cert-verify: true
+    network: ws
+    sni: ava.game.naver.com.my-vpnvip.my.id
+    ws-opts:
+      path: /194.127.193.240-50791
+      headers:
+        Host: ava.game.naver.com.my-vpnvip.my.id
+    udp: true
+  - name: Cloudflare Warp
+    interface-name: wwan0
+    server: ava.game.naver.com
+    port: 443
+    type: trojan
+    password: 9ed0f660-2fd6-4016-a6df-95df20598658
+    skip-cert-verify: true
+    network: ws
+    sni: ava.game.naver.com.my-vpnvip.my.id
+    ws-opts:
+      path: /138.2.74.219-28616
+      headers:
+        Host: ava.game.naver.com.my-vpnvip.my.id
+    udp: true
+  - name: Amazon
+    interface-name: wwan0
+    server: ava.game.naver.com
+    port: 443
+    type: trojan
+    password: 9ed0f660-2fd6-4016-a6df-95df20598658
+    skip-cert-verify: true
+    network: ws
+    sni: ava.game.naver.com.my-vpnvip.my.id
+    ws-opts:
+      path: /54.169.229.188-443
+      headers:
+        Host: ava.game.naver.com.my-vpnvip.my.id
+    udp: true
+  - name: Green Floid
+    interface-name: wwan0
+    server: ava.game.naver.com
+    port: 443
+    type: trojan
+    password: 9ed0f660-2fd6-4016-a6df-95df20598658
+    skip-cert-verify: true
+    network: ws
+    sni: ava.game.naver.com.my-vpnvip.my.id
+    ws-opts:
+      path: /5.34.176.119-81
+      headers:
+        Host: ava.game.naver.com.my-vpnvip.my.id
+    udp: true
