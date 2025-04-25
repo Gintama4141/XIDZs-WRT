@@ -1,0 +1,115 @@
+proxy-providers:
+  🇮🇩VPN 1🇮🇩:
+    type: file
+    path: "./proxy_provider/vpn1.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 99
+  🇸🇬VPN 2🇸🇬:
+    type: file
+    path: "./proxy_provider/vpn2.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 99
+proxy-groups:
+- name: 🌐INTERNET📡
+  type: select
+  disable-udp: false
+  proxies:
+  - 🇮🇩VPN 1🇮🇩
+  - 🇸🇬VPN 2🇸🇬
+  - 🔰URL-TEST🔰
+  - ☢️LOADBALANCE☢️
+  - ☣️FALLBACK☣️
+- name: 💢ADS🔞
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  - 🇮🇩VPN 1🇮🇩
+  - 🇸🇬VPN 2🇸🇬
+- name: 🎮GAMING🎮
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT  
+  - 🇮🇩VPN 1🇮🇩
+  - 🇸🇬VPN 2🇸🇬
+- name: 🇮🇩VPN 1🇮🇩
+  type: fallback
+  disable-udp: false
+  use:
+  - 🇮🇩VPN 1🇮🇩
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: 🇸🇬VPN 2🇸🇬
+  type: select
+  disable-udp: false
+  use:
+  - 🇸🇬VPN 2🇸🇬
+- name: 🔰URL-TEST🔰
+  type: url-test
+  disable-udp: false
+  proxies:
+  - 🇮🇩VPN 1🇮🇩
+  - 🇸🇬VPN 2🇸🇬
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: ☢️LOADBALANCE☢️
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  proxies:
+  - 🇮🇩VPN 1🇮🇩
+  - 🇸🇬VPN 2🇸🇬
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+- name: ☣️FALLBACK☣️
+  type: fallback
+  disable-udp: false
+  proxies:
+  - 🇮🇩VPN 1🇮🇩
+  - 🇸🇬VPN 2🇸🇬
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+rule-providers:
+  Direct:
+    type: file
+    behavior: classical
+    path: "./rule_provider/direct.yaml"
+  Reject:
+    type: file
+    behavior: classical
+    path: "./rule_provider/reject.yaml"
+  Game:
+    type: file
+    behavior: classical
+    path: "./rule_provider/game.yaml"
+  PortGame:
+    type: file
+    behavior: classical
+    path: "./rule_provider/portgame.yaml"
+  Block:
+    type: file
+    behavior: classical
+    path: "./rule_provider/block.yaml"
+rules:
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,169.254.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,224.0.0.0/3,DIRECT
+  - IP-CIDR6,::1/128,DIRECT
+  - IP-CIDR6,fc00::/7,DIRECT
+  - IP-CIDR6,fe80::/10,DIRECT
+  - IP-CIDR6,fd00::/8,DIRECT
+  - RULE-SET,Direct,DIRECT
+  - RULE-SET,Reject,REJECT 
+  - RULE-SET,Game,🎮GAMING🎮
+  - RULE-SET,PortGame,🎮GAMING🎮
+  - RULE-SET,Block,💢ADS🔞
+  - MATCH,🌐INTERNET📡
