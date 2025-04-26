@@ -66,7 +66,6 @@ packages_custom+=(
     "luci-app-droidnet_|https://api.github.com/repos/animegasan/luci-app-droidmodem/releases/latest"
     "luci-theme-alpha_|https://api.github.com/repos/derisamedia/luci-theme-alpha/releases/latest"
     "luci-app-neko_|https://api.github.com/repos/nosignals/openwrt-neko/releases/latest"
-    "luci-app-netmonitor_|https://api.github.com/repos/rizkikotet-dev/luci-app-netmonitor/releases/latest"
 )
 
 if [ "${TYPE}" == "OPHUB" ]; then
