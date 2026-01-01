@@ -61,6 +61,7 @@ on:
           - openclash-nikki
           - openclash-insomclash
           - openclash-nikki-passwall
+          - insomclash
           - no-tunnel
       clean:
         description: "Do 'make clean' for each run"
