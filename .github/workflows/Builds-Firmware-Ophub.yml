@@ -46,6 +46,7 @@ on:
           - Amlogic s912 Nexbox-A1-A95X
           - Amlogic s912 Nexbox-A95X-A2
           - Amlogic s922x GT-King-Pro
+          - Tanix-TX6
           - RK3318-BOX
           - Firefly-Rk3328
           - Rk3399 King3399
@@ -56,6 +57,7 @@ on:
         type: choice
         options:
           - openclash
+          - nikki
           - openclash-nikki
           - openclash-insomclash
           - openclash-nikki-passwall
@@ -128,6 +130,7 @@ jobs:
               "Amlogic s912 Nexbox-A1-A95X",
               "Amlogic s912 Nexbox-A95X-A2",
               "Amlogic s922x GT-King-Pro",
+              "Tanix-TX6",
               "Firefly-Rk3328",
               "Rk3318-BOX",
               "Rk3399 King3399"
@@ -502,7 +505,13 @@ jobs:
               KERNEL="6.1.y"
               echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
               echo "KERNEL=$KERNEL" >> $GITHUB_ENV
-              ;;            
+              ;;
+            "Tanix-TX6")
+              TARGET_BUILD="tanix-tx6"
+              KERNEL="6.1.y"
+              echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
+              echo "KERNEL=$KERNEL" >> $GITHUB_ENV
+              ;;
             "OrangePi3")
               TARGET_BUILD="orangepi-3"
               KERNEL="6.6.y"
